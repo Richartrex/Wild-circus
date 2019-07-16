@@ -1,0 +1,19 @@
+.container-fluid {      
+    background-image: url(/assets/images/cirque.jpg);
+    background-attachment:fixed;
+    background-size: cover;     
+    height: 100vh;
+    margin-right: 0;
+    margin-left: 0;
+    border: 3px solid red;
+}
+
+h2 {
+    position: absolute;
+    color:white;
+    border: 3px solid red;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
