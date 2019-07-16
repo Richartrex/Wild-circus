@@ -24,10 +24,10 @@ const routes: Routes = [
   //  [
       { path: "home", pathMatch: "full", component: HomeComponent },
       { path: "performances", pathMatch: "full", component: PerformancesComponent },
-      // { path: "prices", pathMatch: "full", component: PricesComponent },
-      // { path: "school", pathMatch: "full", component: SchoolComponent },
-      // { path: "contact", pathMatch: "full", component: ContactComponent },
-      // { path: "galerie", pathMatch: "full", component: GalerieComponent },
+      { path: "prices", pathMatch: "full", component: PricesComponent },
+      { path: "school", pathMatch: "full", component: SchoolComponent },
+      { path: "contact", pathMatch: "full", component: ContactComponent },
+      { path: "galerie", pathMatch: "full", component: GalerieComponent },
 ];
 
 @NgModule({
