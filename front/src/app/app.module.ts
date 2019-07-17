@@ -11,15 +11,21 @@ import { PricesComponent } from './prices/prices.component';
 import { SchoolComponent } from './school/school.component';
 import { ContactComponent } from './contact/contact.component';
 import { GalerieComponent } from './galerie/galerie.component';
+import { AdministrationComponent } from './administration/administration.component';
 
 const routes: Routes = [  
+      {
+        path: "admin", pathMatch: "full", component: AdministrationComponent
+      },
+      {
+        path : '' , redirectTo : '/home' , pathMatch:'full'
+      },  
       { path: "home", pathMatch: "full", component: HomeComponent },
       { path: "performances", pathMatch: "full", component: PerformancesComponent },
       { path: "prices", pathMatch: "full", component: PricesComponent },
       { path: "school", pathMatch: "full", component: SchoolComponent },
       { path: "contact", pathMatch: "full", component: ContactComponent },
-      { path: "galerie", pathMatch: "full", component: GalerieComponent },
-      { path:"", component: HomeComponent }
+      { path: "galerie", pathMatch: "full", component: GalerieComponent },  
 ];
 
 @NgModule({
@@ -31,7 +37,8 @@ const routes: Routes = [
     PricesComponent,
     SchoolComponent,
     ContactComponent,
-    GalerieComponent
+    GalerieComponent,
+    AdministrationComponent
   ],
   imports: [
     BrowserModule,
