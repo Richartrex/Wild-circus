@@ -12,7 +12,7 @@ h2 {
     position: absolute;
     color:white;
     border: 3px solid red;
-    top: 15%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

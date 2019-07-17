@@ -1,0 +1,51 @@
+<div *ngIf="access" >
+  <h1>Bienvenue sur votre espace de connexion</h1>
+  <h2 class="title">Pour continuer, merci de vous connecter :</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-md-12">
+      <form (ngSubmit)="onSubmit(myForm.value)" #myForm="ngForm" class="mx-auto ">
+        <div class="form-group">
+          <label for="username">Nom d'utilisateur :</label>
+          <input required [(ngModel)]="username" #Username="ngModel" id="username"
+          name="username" type="text" class="form-control">
+        </div>
+        
+        <div *ngIf="myForm.submitted">
+          <div class="alert alert-danger" *ngIf="Username.errors">
+            <div *ngIf="Username.errors.required">Champ requis.</div>
+          </div>
+        </div>  
+        
+        <div class="form-group">
+          <label for="password">Mot de passe :</label>
+          <input required [(ngModel)]="password" #Password="ngModel" id="password"
+          name="password" type="password" class="form-control">
+        </div>
+        
+        <div *ngIf="myForm.submitted">
+          <div class="alert alert-danger" *ngIf="Password.errors">
+            <div *ngIf="Password.errors.required">Champ requis.</div>
+          </div>
+        </div>
+        <button class="btn btn-warning " type="submit">ENVOYER </button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<div *ngIf="!access"> 
+  <h1>Bienvenue</h1>
+  <button class="btn btn-warning title" (click)="logout()">Se déconnecter </button>
+  <h2>Photo</h2>
+  <button class="btn btn-warning " (click)="showPicture()">Afficher les photos </button>
+  <div *ngIf="showpic">
+    <div *ngFor="let pic of picture" class="cont">
+        <img src="{{pic.path}}">
+        <button class="btn btn-warning cont "><i class="fas fa-minus-circle"></i></button>
+    </div>
+  </div>
+  <h2>School</h2>
+  <button class="btn btn-warning ">View school</button>
+</div>
