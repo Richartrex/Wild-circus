@@ -16,3 +16,13 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.carousel {
+    position: absolute;
+    top: 27%;
+    left: 5%;
+}
+
+.buttonnext {    
+    margin-right: 50%;
+}

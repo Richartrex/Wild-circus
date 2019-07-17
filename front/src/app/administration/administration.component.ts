@@ -15,7 +15,7 @@ export class AdministrationComponent implements OnInit {
 
   access:boolean = true;
   showpic:boolean = false;
-  public picture:string;
+  public picture:any[];
 
   constructor(public loginService: AdminAuthService,
     public userService: UserService, 
@@ -26,9 +26,9 @@ export class AdministrationComponent implements OnInit {
 
   showPicture(){
     this.pictureService.getPicture().subscribe(
-      (p_picture: string) => {
+      (p_picture: any[]) => {
         this.picture = p_picture;
-        console.log(this.picture)
+       
         if (this.showpic == false){
           this.showpic = true;
         }else{
