@@ -12,22 +12,14 @@ import { SchoolComponent } from './school/school.component';
 import { ContactComponent } from './contact/contact.component';
 import { GalerieComponent } from './galerie/galerie.component';
 
-const routes: Routes = [
-    
-  // {
-  //   path: "admin", pathMatch: "full", component: AdministrationComponent
-  // },
-  // {
-  //   path : '' , redirectTo : '/home' , pathMatch:'full'
-  // },
-  // { path: "home", component: FrontComponent, children: 
-  //  [
+const routes: Routes = [  
       { path: "home", pathMatch: "full", component: HomeComponent },
       { path: "performances", pathMatch: "full", component: PerformancesComponent },
       { path: "prices", pathMatch: "full", component: PricesComponent },
       { path: "school", pathMatch: "full", component: SchoolComponent },
       { path: "contact", pathMatch: "full", component: ContactComponent },
       { path: "galerie", pathMatch: "full", component: GalerieComponent },
+      { path:"", component: HomeComponent }
 ];
 
 @NgModule({
@@ -45,16 +37,7 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(
-      routes,      
-      {
-        useHash: false,
-        enableTracing: false,
-        anchorScrolling: "enabled",
-        onSameUrlNavigation: "reload",
-        scrollPositionRestoration: "enabled",
-      }
-      ) 
+    RouterModule.forRoot(routes)      
     ],  
   providers: [],
   bootstrap: [AppComponent]
