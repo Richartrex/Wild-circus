@@ -1,0 +1,22 @@
+h1,h2{
+    text-align: center;
+    text-decoration: underline;
+    color: black;
+}
+.title{
+    margin-bottom: 10%;
+}
+button{
+    display: block;
+    margin : auto;
+}
+label{
+    color:black;
+}
+img{
+    width: 30%;
+}
+.cont{
+    display: inline;
+    justify-content: center;
+}

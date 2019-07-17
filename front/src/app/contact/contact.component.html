@@ -1,3 +1,83 @@
-<div class="contact">
-<p>contact works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <h2>CONTACT</h2>
+        <div class="position">
+            <p>Please enter your contact information :</p>
+            <div class="col-lg-8 offset-lg-2 col-md-12">
+                <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="mx-auto ">
+                    <div class="form-group">
+                        <label for="lastname">Nom<span class="requis">*</span> :</label>
+                        <input required minlength="2" maxlength="15" [(ngModel)]="lastname" #Lastname="ngModel"
+                            id="lastname" name="lastname" type="text" class="form-control">
+                    </div>
+
+                    <div *ngIf="myForm.submitted">
+                        <div class="alert alert-danger" *ngIf="Lastname.errors">
+                            <div *ngIf="Lastname.errors.required">Champs requis.</div>
+                            <div *ngIf="Lastname.errors.minlength">Champs requis 2 charactères(min).</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstname">Prénom<span class="requis">*</span> :</label>
+                        <input required minlength="2" maxlength="15" [(ngModel)]="firstname" #Firstname="ngModel"
+                            id="firstname" name="firstname" type="text" class="form-control">
+                    </div>
+
+                    <div *ngIf="myForm.submitted">
+                        <div class="alert alert-danger" *ngIf="Firstname.errors">
+                            <div *ngIf="Firstname.errors.required">Champs requis.</div>
+                            <div *ngIf="Firstname.errors.minlength">Champs requis 2 charactères(min).</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Numéro de téléphone<span class="requis">*</span> :</label>
+                        <input required minlength="10" maxlength="10" [(ngModel)]="phoneNumber" #PhoneNumber="ngModel"
+                            name="Numéro de téléphone" id="phoneNumber" type="text" class="form-control">
+                    </div>
+                    <div *ngIf="myForm.submitted">
+                        <div class="alert alert-danger" *ngIf=" PhoneNumber.errors">
+                            <div *ngIf="PhoneNumber.errors.required">Numéro de téléphone requis.</div>
+                            <div *ngIf="PhoneNumber.errors.minlength">Numéro de téléphone non valide.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email<span class="requis">*</span> :</label>
+                        <input required minlength="9" maxlength="50" [(ngModel)]="email" #Email="ngModel" n="ngModel"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" type="text" placeholder="Email"
+                            name="mail" class="form-control">
+                    </div>
+                    <div *ngIf="myForm.submitted">
+                        <div class="alert alert-danger" *ngIf="Email.errors">
+                            <div *ngIf="Email.errors.required">Email requis.</div>
+                            <div *ngIf="Email.errors.pattern ">Email non valide.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Commentaires :</label>
+                        <textarea class="col-12" id="" cols="50" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <input type="checkbox" id="checkbox" name="checkbox" [(ngModel)]="check" #Checkbox="ngModel"
+                                required>
+                            <label for="checkbox">En cochant cette case, je certifie avoir pris connaissance des
+                                mentions
+                                légales.</label>
+                        </div>
+                        <div *ngIf="myForm.submitted">
+                            <div class="alert alert-danger" *ngIf="Checkbox.errors">
+                                <div *ngIf="Checkbox.errors.required">Case requise.</div>
+                            </div>
+                        </div>
+                        <div class="requiredEmpty">
+                            <span>(*)</span> <span class="required font-italic"> Champs obligatoires</span>
+                            <br>
+                            <button class="btn btn-warning " type="submit">ENVOYER </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
