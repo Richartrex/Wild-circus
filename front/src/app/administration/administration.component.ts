@@ -37,6 +37,14 @@ export class AdministrationComponent implements OnInit {
       } 
     )
   }
+
+  deletePicture(id: number){
+    console.log(id)
+    this.pictureService.deletePicture(id).subscribe(
+      (data => data)
+    )
+          
+  }
   onSubmit(value:any){
     let jsonObject = {
       "username": value.username,

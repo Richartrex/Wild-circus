@@ -22,4 +22,8 @@ export class PictureService {
     const url:string = "http://localhost:8080/picture"
     return this.service.get<any>(url,HttpOptions)
   }
+
+  public deletePicture(id: number): Observable<any>{
+    return this.service.delete<any>("http://localhost:8080/picture/" + id,HttpOptions)
+  }
 }

@@ -43,7 +43,7 @@
   <div *ngIf="showpic">
     <div *ngFor="let pic of picture" class="cont">
         <img src="{{pic.path}}">
-        <button class="btn btn-warning cont "><i class="fas fa-minus-circle"></i></button>
+        <button class="btn btn-warning cont" (click)="deletePicture(pic.id)"><i class="fas fa-minus-circle"></i></button>
     </div>
   </div>
   <h2>School</h2>
