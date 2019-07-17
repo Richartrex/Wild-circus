@@ -1,0 +1,19 @@
+.navbar, .navbar ul li a{    
+    font-weight: bold;
+    color: black;    
+    width: 100%;
+}
+
+.navbar li a:hover{    
+    background-color: white; 
+} 
+
+.navbar ul a:hover {
+    color: black    
+}
+
+.navbar{
+    position: fixed;    
+    width: 100%;
+    z-index: 10;
+}
